@@ -1,11 +1,11 @@
 #include<string.h>
 #include<stdlib.h>
+#include<stdio.h>
+#include<mystring.h>
 
-char* safestrcat (char *a, char *b) {
-	char *AandB = malloc(strlen(a)+strlen(b)+1);
-	strcpy(a, AandB);
-	strcpy(b, AandB);
-	return AandB;
+int main() {
+	safestrcat("some stuff", "some other stuff");
+	char a[100];
+	substring("this is the source", 5, 10, a);
+	return 0;
 }
-
-	
