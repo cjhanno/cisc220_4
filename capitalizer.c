@@ -7,56 +7,29 @@ int toupper(int c);
 //#Take the filename to capitalize its text as a - commant-line argument - for testing
 //#use poem.txt 
 
-//FILE *poems;
-//poems = fopen("poem.txt","r+");
-//char poetry[333];
-//fscanf(poems, "%s", poetry);
-
-
-//int a;
-//for( a=0; a<333; a=a+1 ) {
-//      printf("value of a: %c\n", poetry[a]);
-//}
-//while(1) {
-//      if( feof(poems) ) {
-//              break;}
-//      printf("%s",poetry);
-//while(1) {
-//        fgets(buff, 255, fp);
-//       if( feof(fp) ) {
-//                break ;}
-//        printf("%s", buff);
-//}
-
-//fscanf(fp, "%s", buff);
-//printf("1: %s\n", buff);
-
-//fgets(buff, 255, fp);
-//printf("2: %s\n", buff );
-
-//fgets(buff, 255, fp);
-//printf("3: %s\n", buff);
-//fclose(fp);
-//}
-
-//printf("Total size of poem.txt = %d bytes\n", len);
-//printf(fp);
-
-//fseek(fp, 0, SEEK_END);
-//int len = ftell(fp);
-
-//char buff[255];
-
 int main() {
+int i = 2;
 char c;
 char previous = ' ';
 FILE* fp = fopen("poem.txt", "r+");
+
 while((c = fgetc(fp)) != EOF) {
-	if(previous=='\n')
-	putchar (toupper(c));
-	else
-	putchar(c);
+	if(previous=='\n' ){
+		putchar (toupper(c));
+		i = 1;
+	}
+	else if(previous==' '){
+		if (i%2 == 0)
+			putchar (toupper(c));
+		else
+			putchar(c);
+		i+=1;
+	}
+	else{
+		putchar(c);
+	}	
 	previous = c;
+
 }
 	
 fclose(fp);
