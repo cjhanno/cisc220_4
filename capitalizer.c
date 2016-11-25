@@ -28,24 +28,28 @@
 //        printf("%s", buff);
 //}
 
+//fscanf(fp, "%s", buff);
+//printf("1: %s\n", buff);
+
+//fgets(buff, 255, fp);
+//printf("2: %s\n", buff );
+
+//fgets(buff, 255, fp);
+//printf("3: %s\n", buff);
+//fclose(fp);
+//}
+
+//printf("Total size of poem.txt = %d bytes\n", len);
+//printf(fp);
+
+//fseek(fp, 0, SEEK_END);
+//int len = ftell(fp);
+
+//char buff[255];
+
 int main() {
 
-FILE* fp;
-char buff[255];
-
-fp = fopen("poem.txt","w");
-fprintf(fp, "this is testing...\n line2\n");
-fclose(fp); 
-
-fp = fopen("poem.txt", "r");
-fscanf(fp, "%s", buff);
-printf("1: %s\n", buff);
-
-fgets(buff, 255, fp);
-printf("2: %s\n", buff );
-
-fgets(buff, 255, fp);
-printf("3: %s\n", buff);
+FILE* fp = fopen("poem.txt", "r+");
 fclose(fp);
 
 return 0;
