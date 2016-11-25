@@ -37,17 +37,21 @@
 //fgets(buff, 255, fp);
 //printf("3: %s\n", buff);
 //fclose(fp);
+//}
 
+//printf("Total size of poem.txt = %d bytes\n", len);
+//printf(fp);
+
+//fseek(fp, 0, SEEK_END);
+//int len = ftell(fp);
 
 //char buff[255];
 
 int main() {
 
 FILE* fp = fopen("poem.txt", "r+");
-fseek(fp, 0, SEEK_END);
-int len = ftell(fp);
 fclose(fp);
-printf("Total size of poem.txt = %d bytes\n", len);
+
 return 0;
 }
 
